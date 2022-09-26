@@ -32,19 +32,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Amazon clone'),
         ),
-        body: Column(
-          children: [
-            const Center(
-              child: const Text('Amazon clone'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, AuthScreen.routeName);
-              },
-              child: Text(''),
-            ),
-          ],
-        ),
+        body: const AuthScreen(),
       ),
     );
   }
