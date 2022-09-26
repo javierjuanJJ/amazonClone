@@ -11,7 +11,7 @@ const authRouter = require("./routes/auth");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const DB =
-  "mongodb+srv://jj:<password>@cluster0.8fy0ubk.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://jj:u7zJcX4LU4vFes0Y@cluster0.8fy0ubk.mongodb.net/?retryWrites=true&w=majority";
 
 // middleware
 app.use(express.json());
