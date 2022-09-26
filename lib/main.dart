@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Amazon clone',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+        colorScheme: const ColorScheme.light(
+          primary: GlobalVariables.secondaryColor,
+        ),
         appBarTheme: const AppBarTheme(
           elevation: 0,
           iconTheme: IconThemeData(
@@ -24,10 +27,18 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(''),
+          title: Text('Amazon clone'),
         ),
-        body: const Center(
-          child: const Text('Amazon clone'),
+        body: Column(
+          children: [
+            const Center(
+              child: const Text('Amazon clone'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(''),
+            ),
+          ],
         ),
       ),
     );
