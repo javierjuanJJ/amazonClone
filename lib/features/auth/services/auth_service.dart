@@ -9,6 +9,8 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../providers/user_provider.dart';
+
 class AuthService {
   // sign up user
   void signUpUser({
@@ -73,14 +75,14 @@ class AuthService {
         response: res,
         context: context,
         onSuccess: () async {
-          // SharedPreferences prefs = await SharedPreferences.getInstance();
-          // Provider.of<UserProvider>(context, listen: false).setUser(res.body);
-          // await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
-          // Navigator.pushNamedAndRemoveUntil(
-          //   context,
-          //   BottomBar.routeName,
-          //       (route) => false,
-          // );
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          Provider.of<UserProvider>(context, listen: false).setUser(res.body);
+          await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            BottomBar.routeName,
+                (route) => false,
+          );
         },
       );
     } catch (e) {
@@ -119,8 +121,8 @@ class AuthService {
           },
         );
 
-        // var userProvider = Provider.of<UserProvider>(context, listen: false);
-        // userProvider.setUser(userRes.body);
+        var userProvider = Provider.of<UserProvider>(context, listen: false);
+        userProvider.setUser(userRes.body);
       }
     } catch (e) {
       showSnackBar(context, e.toString());
