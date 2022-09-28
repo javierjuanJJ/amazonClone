@@ -5,6 +5,8 @@ import 'package:amazon_clone/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'common/widgets/bottom_bar.dart';
+import 'features/admin/screens/admin_screen.dart';
 import 'features/auth/services/auth_service.dart';
 
 void main() {
