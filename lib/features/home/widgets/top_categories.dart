@@ -33,8 +33,8 @@ class TopCategories extends StatelessWidget {
                     child: Image.asset(
                       GlobalVariables.categoryImages[index]['image']!,
                       fit: BoxFit.cover,
-                      height: 40,
-                      width: 40,
+                      height: 30,
+                      width: 30,
                     ),
                   ),
                 ),
